@@ -5,12 +5,12 @@ import numpy as np
 # set learning rate
 learning_rate = 0.05
 
-# load data
+# load training data
 xy = np.loadtxt("breast_cancer_training.txt", unpack = True, dtype = "float32")
 x_input = np.transpose(xy[1 : 10])
 y_input = np.transpose(xy[10:])
 
-# set variables you will use
+# set variables you will feed
 X = tf.placeholder(tf.float32, [None, 9])
 Y = tf.placeholder(tf.float32, [None, 1])
 
@@ -37,10 +37,11 @@ layer3 = tf.nn.relu(tf.matmul(layer2, W4) + b4)
 h = tf.nn.sigmoid(tf.matmul(layer3, W5) + b5)
 
 # calculate cost and minimise cost
+# cross entropy cross function
 cost = -tf.reduce_mean(Y * tf.log(h) + (1 - Y) * tf.log(1. - h))
 train = tf.train.AdamOptimizer(learning_rate).minimize(cost)
 
-# set initialisation variable for initialising
+# set initialisation operation for initialising
 init = tf.global_variables_initializer()
 
 # set save operation for your learning
