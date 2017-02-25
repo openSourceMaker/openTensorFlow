@@ -52,7 +52,7 @@ with tf.Session() as sess:
                   sess.run(W4),
                   sess.run(W5))
 
-    saver.save(sess, "/Users/taejoon/Desktop/trained_breast_cancer/")
+    saver.save(sess, "/your/path/for/saving/")
 
     # Test model
     correct_prediction = tf.equal(tf.floor(h + 0.5), Y)
