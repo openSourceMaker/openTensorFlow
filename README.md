@@ -23,6 +23,6 @@ The attributes of Breast Cancer Data is
 Through this example, we're gonna classify which one is benign or malignant.
 
 This example showed 98% accuracy.
-It depends on how you design your neural network. You can change the form of neural network that you want to do. 
+It depends on how you design your neural network. You can change the form of neural network how you want to do. 
 
 Also, this examples show how to save your trained data and use the trained data after training.
