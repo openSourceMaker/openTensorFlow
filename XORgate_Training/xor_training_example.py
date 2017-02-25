@@ -27,7 +27,7 @@ input_layer = tf.sigmoid(tf.matmul(X, W1) + b1)
 output_layer = tf.sigmoid(tf.matmul(input_layer, W2) + b2)
 
 # calculate cost and minimise cost
-# cross entropy cross function
+# cross entropy cost function
 cost = -tf.reduce_mean(Y * tf.log(output_layer) + (1 - Y) * tf.log(1. - output_layer))
 train = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
