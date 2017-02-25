@@ -7,11 +7,11 @@ X = tf.placeholder(tf.float32, shape = [None, 2])
 Y = tf.placeholder(tf.float32, shape = [None, 1])
 
 # set weights for learning
-W1 = tf.Variable(tf.random_uniform([2, 3], -1.0, 1.0))
-W2 = tf.Variable(tf.random_uniform([3, 1], -1.0, 1.0))
+W1 = tf.Variable(tf.random_uniform([2, 2], -1.0, 1.0))
+W2 = tf.Variable(tf.random_uniform([2, 1], -1.0, 1.0))
 
 # set biases for learning
-b1 = tf.Variable(tf.zeros([3]))
+b1 = tf.Variable(tf.zeros([2]))
 b2 = tf.Variable(tf.zeros([1]))
 
 # set layers for deep learning
