@@ -61,12 +61,11 @@ with tf.Session() as sess:
                   sess.run(W4),
                   sess.run(W5))
 
-    saver.save(sess, "your/path/for/saving")
+    saver.save(sess, "your/path/for/saving/")
 
     # correction and accuracy that you want to see how it is well learned
     correction = tf.equal(tf.floor(h + 0.5), Y)
     acc = tf.reduce_mean(tf.cast(correction, "float"))
-
     print(sess.run([h, tf.floor(h + 0.5), correction, acc], feed_dict={X: x_input, Y: y_input}))
     print("Accuracy : ", acc.eval({X: x_input, Y: y_input}))
 
