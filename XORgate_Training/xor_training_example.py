@@ -40,15 +40,15 @@ saver = tf.train.Saver()
 with tf.Session() as sess:
     sess.run(init)
 
-    for step in range(10000):
+    for step in range(1000):
         sess.run(train, feed_dict = {X: x_input, Y: y_input})
 
-        if step % 1000 == 0:
+        if step % 100 == 0:
             print(step, sess.run(cost, feed_dict = {X: x_input, Y: y_input}),
                   "W1 : ", sess.run(W1),
                   "W2 : ", sess.run(W2))
 
-    saver.save(sess, "/your/path/for/saving")
+    # saver.save(sess, "/your/path/for/saving")
 
     # correction and accuracy that you want to see how it is well learned
     correction = tf.equal(tf.floor(output_layer + 0.5), Y)
