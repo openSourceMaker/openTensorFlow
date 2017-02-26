@@ -8,7 +8,7 @@ learning_rate = 0.1
 # load training data
 xy = np.loadtxt("xor.txt", unpack = True)
 x_input = np.transpose(xy[0 : -1])
-y_input = np.reshape(xy[-1], (4, 1))
+y_input = np.transpose(xy[-1 : ])
 
 # set variables you will feed
 X = tf.placeholder(tf.float32, shape = [None, 2])
@@ -40,10 +40,10 @@ saver = tf.train.Saver()
 with tf.Session() as sess:
     sess.run(init)
 
-    for step in range(1000):
+    for step in range(5000):
         sess.run(train, feed_dict = {X: x_input, Y: y_input})
 
-        if step % 100 == 0:
+        if step % 500 == 0:
             print(step, sess.run(cost, feed_dict = {X: x_input, Y: y_input}),
                   "W1 : ", sess.run(W1),
                   "W2 : ", sess.run(W2))
