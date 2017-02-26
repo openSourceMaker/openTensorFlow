@@ -1,3 +1,30 @@
+How to install TensorFlow
+
+------------------------------------------------------------------------------------------------------------------------------
+
+macOS : 
+
+python 2.7(CPU only)
+sudo pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py2-none-any.whl
+
+python 3.n(CPU only)
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py3-none-any.whl
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Ubuntu : 
+
+python 2.7(CPU only)
+sudo pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0-cp27-none-linux_x86_64.whl
+
+python 3.4(CPU only)
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0-cp34-cp34m-linux_x86_64.whl
+
+python 3.5(CPU only)
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0-cp35-cp35m-linux_x86_64.whl
+
+------------------------------------------------------------------------------------------------------------------------------
+
 This is examples of TensorFlow.
 
 There are two examples. 
