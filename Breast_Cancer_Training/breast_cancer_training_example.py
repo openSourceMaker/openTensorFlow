@@ -44,7 +44,7 @@ with tf.Session() as sess:
     for step in range(10000):
         sess.run(train, feed_dict = {X: x_input, Y: y_input})
 
-        if step % 1000 == 0:
+        if step % 2000 == 0:
             print(step, sess.run(coss, feed_dict = {X: x_input, Y: y_input}),
                   sess.run(W1),
                   sess.run(W2),
@@ -52,7 +52,7 @@ with tf.Session() as sess:
                   sess.run(W4),
                   sess.run(W5))
 
-    saver.save(sess, "/your/path/for/saving/")
+    # saver.save(sess, "/your/path/for/saving/")
 
     # Test model
     correct_prediction = tf.equal(tf.floor(h + 0.5), Y)
