@@ -27,12 +27,12 @@ layer0 = tf.matmul(X, W1) + b1
 layer1 = tf.nn.relu(tf.matmul(layer0, W2) + b2)
 layer2 = tf.tanh(tf.matmul(layer1, W3) + b3)
 layer3 = tf.nn.relu(tf.matmul(layer2, W4) + b4)
-h = tf.nn.sigmoid(tf.matmul(layer3, W5) + b5)
+h = tf.sigmoid(tf.matmul(layer3, W5) + b5)
 
-coss = -tf.reduce_mean(Y * tf.log(h) + (1 - Y) * tf.log(1. - h))
+cost = -tf.reduce_mean(Y * tf.log(h) + (1 - Y) * tf.log(1. - h))
 
 optmizer = tf.train.AdamOptimizer(learning_rate)
-train = optmizer.minimize(coss)
+train = optmizer.minimize(cost)
 
 init = tf.global_variables_initializer()
 
@@ -45,7 +45,7 @@ with tf.Session() as sess:
         sess.run(train, feed_dict = {X: x_input, Y: y_input})
 
         if step % 2000 == 0:
-            print(step, sess.run(coss, feed_dict = {X: x_input, Y: y_input}),
+            print(step, sess.run(cost, feed_dict = {X: x_input, Y: y_input}),
                   sess.run(W1),
                   sess.run(W2),
                   sess.run(W3),
